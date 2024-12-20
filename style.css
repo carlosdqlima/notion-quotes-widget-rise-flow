@@ -1,0 +1,18 @@
+.quote-container {
+    font-family: sans-serif;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.quote-author {
+    font-size: 0.9em;
+    color: #777;
+}
