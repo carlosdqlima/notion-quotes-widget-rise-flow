@@ -1,17 +1,14 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --border-color: #dddddd;
-    --author-color: #666666;
+    --bg-color: transparent;
+    --text-color: rgb(55, 53, 47);
+    --border-color: rgba(55, 53, 47, 0.16);
+    --author-color: rgba(55, 53, 47, 0.6);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #222;
-        --text-color: #f0f0f0;
-        --border-color: #444;
-        --author-color: #aaa;
-    }
+.notion-dark-theme {
+    --text-color: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(255, 255, 255, 0.13);
+    --author-color: rgba(255, 255, 255, 0.6);
 }
 
 .quote-container {
