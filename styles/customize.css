@@ -178,31 +178,42 @@ body {
 
 .link-section {
     margin-top: 30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
 }
 
 .link-container {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 #widgetUrl {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    min-width: 200px;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    font-family: monospace;
+    font-size: 14px;
 }
 
 .copy-button {
-    padding: 10px 20px;
-    background: #0066cc;
-    color: white;
+    padding: 12px 24px;
+    background: #64FFDA;
+    color: #0A192F;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .instructions {
-    color: #666;
+    color: rgba(255,255,255,0.6);
     font-size: 0.9em;
     margin-top: 10px;
 }
@@ -533,15 +544,16 @@ html {
         flex-direction: column;
     }
 
+    #widgetUrl {
+        width: calc(100% - 24px); /* compensar o padding */
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
     .copy-button {
         width: 100%;
         margin-top: 10px;
         padding: 12px;
-    }
-
-    #widgetUrl {
-        width: 100%;
-        margin-bottom: 5px;
     }
 
     .tutorial-steps code {
