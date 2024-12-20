@@ -6,9 +6,9 @@
 }
 
 .notion-dark-theme {
-    --text-color: rgba(255, 255, 255, 0.95);
-    --border-color: rgba(255, 255, 255, 0.25);
-    --author-color: rgba(255, 255, 255, 0.8);
+    --text-color: rgb(255, 255, 255);
+    --border-color: rgba(255, 255, 255, 0.8);
+    --author-color: rgba(255, 255, 255, 0.9);
 }
 
 .quote-container {
