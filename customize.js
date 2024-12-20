@@ -3,40 +3,36 @@ const urlInput = document.getElementById("widgetUrl");
 
 function updatePreview() {
     const params = {
-        textColor: document.getElementById('textColor').value,
-        bgColor: document.getElementById('bgColor').value,
+        textColor: document.getElementById('textColor').value.substring(1), // Remove o #
+        bgColor: document.getElementById('bgColor').value.substring(1), // Remove o #
         bgOpacity: document.getElementById('bgOpacity').value,
-        borderColor: document.getElementById('borderColor').value,
+        borderColor: document.getElementById('borderColor').value.substring(1), // Remove o #
         borderWidth: document.getElementById('borderWidth').value,
         borderRadius: document.getElementById('borderRadius').value,
         fontSize: document.getElementById('fontSize').value
     };
 
     // Atualizar preview
-    const preview = document.getElementById('preview');
     preview.innerHTML = generateQuoteHTML(params);
 
-    // Atualizar URL
-    const baseUrl = `${window.location.origin}${window.location.pathname.replace('index.html', 'widget.html')}`;
+    // Gerar URL absoluta para o widget
+    const baseUrl = window.location.href.replace(/\/[^\/]*$/, '/widget.html');
     const queryString = Object.entries(params)
         .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
         .join('&');
     
-    document.getElementById('widgetUrl').value = `${baseUrl}?${queryString}`;
+    urlInput.value = `${baseUrl}?${queryString}`;
 
     // Atualizar valores exibidos
-    document.getElementById('bgOpacityValue').textContent = `${params.bgOpacity}%`;
-    document.getElementById('borderWidthValue').textContent = `${params.borderWidth}px`;
-    document.getElementById('borderRadiusValue').textContent = `${params.borderRadius}px`;
-    document.getElementById('fontSizeValue').textContent = `${params.fontSize}px`;
+    updateDisplayValues(params);
 }
 
 function generateQuoteHTML(params) {
-    const quote = quotes[0]; // Usar primeira citação para preview
+    const quote = quotes[0];
     const style = `
-        color: ${params.textColor};
-        background-color: ${params.bgColor}${Math.round(params.bgOpacity * 2.55).toString(16).padStart(2, '0')};
-        border: ${params.borderWidth}px solid ${params.borderColor};
+        color: #${params.textColor};
+        background-color: #${params.bgColor}${Math.round(params.bgOpacity * 2.55).toString(16).padStart(2, '0')};
+        border: ${params.borderWidth}px solid #${params.borderColor};
         border-radius: ${params.borderRadius}px;
         font-size: ${params.fontSize}px;
         padding: 20px;
@@ -56,6 +52,13 @@ function copyUrl() {
     urlInput.select();
     document.execCommand('copy');
     alert('Link copiado!');
+}
+
+function updateDisplayValues(params) {
+    document.getElementById('bgOpacityValue').textContent = `${params.bgOpacity}%`;
+    document.getElementById('borderWidthValue').textContent = `${params.borderWidth}px`;
+    document.getElementById('borderRadiusValue').textContent = `${params.borderRadius}px`;
+    document.getElementById('fontSizeValue').textContent = `${params.fontSize}px`;
 }
 
 // Adicionar listeners para todos os controles

@@ -2,59 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <style>
-        :root {
-            --font-size: 100%;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .theme-light {
-            --bg-color: transparent;
-            --text-color: rgb(55, 53, 47);
-            --border-color: rgba(55, 53, 47, 0.16);
-        }
-        .theme-dark {
-            --bg-color: rgba(25, 25, 25, 0.3);
-            --text-color: rgb(255, 255, 255);
-            --border-color: rgba(255, 255, 255, 0.13);
-        }
-        .font-default { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-        .font-serif { font-family: Georgia, serif; }
-        .font-mono { font-family: monospace; }
-
-        .quote-container {
-            font-size: var(--font-size);
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            text-align: center;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-        
-    </style>
 </head>
-<body>
-    <div id="quote-container" class="quote-container"></div>
+<body style="margin: 0; padding: 0;">
+    <div id="quote-container"></div>
     <script src="quotes.js"></script>
-    <script src="script.js"></script>
     <script>
-        // Obter parâmetros da URL
-        const params = Object.fromEntries(new URLSearchParams(window.location.search));
-        
-        // Gerar HTML com os parâmetros
+        // Obter e processar parâmetros da URL
+        const params = Object.fromEntries(
+            new URLSearchParams(window.location.search)
+        );
+
         function displayQuote() {
             const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
             const style = `
-                color: ${params.textColor || '#333'};
-                background-color: ${params.bgColor || '#fff'}${params.bgOpacity ? Math.round(params.bgOpacity * 2.55).toString(16).padStart(2, '0') : ''};
-                border: ${params.borderWidth || 1}px solid ${params.borderColor || '#ddd'};
+                color: #${params.textColor || '333'};
+                background-color: #${params.bgColor || 'fff'}${params.bgOpacity ? Math.round(params.bgOpacity * 2.55).toString(16).padStart(2, '0') : ''};
+                border: ${params.borderWidth || 1}px solid #${params.borderColor || 'ddd'};
                 border-radius: ${params.borderRadius || 8}px;
                 font-size: ${params.fontSize || 16}px;
                 padding: 20px;
                 text-align: center;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             `;
 
             document.getElementById('quote-container').innerHTML = `
@@ -66,6 +34,9 @@
         }
 
         displayQuote();
+
+        // Atualizar citação a cada 24 horas
+        setInterval(displayQuote, 24 * 60 * 60 * 1000);
     </script>
 </body>
 </html>
