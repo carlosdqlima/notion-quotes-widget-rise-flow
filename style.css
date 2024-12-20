@@ -5,15 +5,14 @@
     --author-color: rgba(55, 53, 47, 0.6);
 }
 
-.notion-dark-theme {
-    --text-color: rgb(250, 250, 250); 
-    --border-color: rgba(255, 255, 255, 0.2); 
-     --author-color: rgba(250, 250, 250, 0.7);
-     --bg-color: rgba(30, 30, 30, 0.85);  
+body.notion-dark-theme .quote-container {
+    --text-color: rgb(250, 250, 250) !important;
+   --border-color: rgba(255, 255, 255, 0.2) !important;
+     --author-color: rgba(250, 250, 250, 0.7) !important;
+     --bg-color: rgba(30, 30, 30, 0.85) !important;
 }
-
 .quote-container {
-    font-family: sans-serif;
+   font-family: sans-serif;
     padding: 20px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
