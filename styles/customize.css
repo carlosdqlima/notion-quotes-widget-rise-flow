@@ -32,25 +32,87 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 64px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #fff;
+    gap: 12px;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #64FFDA;
+    transition: opacity 0.2s;
+}
+
+.nav-logo:hover {
+    opacity: 0.9;
 }
 
 .logo {
-    height: 32px;
+    height: 36px;
     width: auto;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 8px;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item i {
+    font-size: 0.9em;
+    color: #64FFDA;
+}
+
+.nav-item:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav-item:active {
+    transform: translateY(0);
+}
+
+/* Responsividade do menu */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 4px;
+    }
+
+    .nav-item {
+        padding: 8px 12px;
+    }
+
+    .nav-logo span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-item span {
+        display: none;
+    }
+
+    .nav-item {
+        padding: 8px;
+    }
+
+    .nav-item i {
+        font-size: 1.1em;
+    }
 }
 
 .nav-links a {
@@ -192,7 +254,7 @@ body {
 }
 
 .tutorial-steps code {
-    background: #e6e6e6;
+    background: #797979;
     padding: 2px 6px;
     border-radius: 4px;
     font-family: monospace;
