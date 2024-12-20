@@ -101,9 +101,16 @@ body {
 }
 
 .preview {
+    background-image: linear-gradient(45deg, #2a4365 25%, transparent 25%),
+                      linear-gradient(-45deg, #2a4365 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #2a4365 75%),
+                      linear-gradient(-45deg, transparent 75%, #2a4365 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-color: #1a365d;
+    border: 1px solid rgba(255,255,255,0.1);
     min-height: 200px;
-    border: 1px dashed #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 20px;
 }
 
@@ -211,7 +218,8 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     align-items: center;
 }
 
@@ -241,4 +249,31 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(135deg, #1a365d 0%, #0A192F 100%);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #64FFDA, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner p {
+    font-size: 1.2em;
+    color: rgba(255,255,255,0.8);
 }
