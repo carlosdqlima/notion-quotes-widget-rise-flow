@@ -40,7 +40,7 @@ const presets = {
   },
 };
 
-function updatePreview() {
+async function updatePreview() {
   const params = {
     textColor: document.getElementById("textColor").value.substring(1), // Remove o #
     bgColor: document.getElementById("bgColor").value.substring(1), // Remove o #
@@ -51,23 +51,27 @@ function updatePreview() {
     fontSize: document.getElementById("fontSize").value,
   };
 
-  // Atualizar preview
-  preview.innerHTML = generateQuoteHTML(params);
+  try {
+    const quotes = await new QuotesService().getQuotes();
+    const quote = quotes[0];
+    preview.innerHTML = generateQuoteHTML(params, quote);
 
-  // Gerar URL absoluta para o widget
-  const baseUrl = window.location.href.replace(/\/[^\/]*$/, "/widget.html");
-  const queryString = Object.entries(params)
-    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-    .join("&");
+    // Gerar URL absoluta para o widget
+    const baseUrl = window.location.href.replace(/\/[^\/]*$/, "/widget.html");
+    const queryString = Object.entries(params)
+      .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+      .join("&");
 
-  urlInput.value = `${baseUrl}?${queryString}`;
+    urlInput.value = `${baseUrl}?${queryString}`;
 
-  // Atualizar valores exibidos
-  updateDisplayValues(params);
+    // Atualizar valores exibidos
+    updateDisplayValues(params);
+  } catch (error) {
+    console.error("Erro ao atualizar preview:", error);
+  }
 }
 
-function generateQuoteHTML(params) {
-  const quote = quotes[0];
+function generateQuoteHTML(params, quote) {
   const style = `
         color: #${params.textColor};
         background-color: #${params.bgColor}${Math.round(
