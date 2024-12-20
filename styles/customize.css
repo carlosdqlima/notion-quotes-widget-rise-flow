@@ -446,3 +446,146 @@ html {
     font-size: 1.2em;
     color: rgba(255,255,255,0.8);
 }
+
+/* Responsividade Global */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .customize-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-section {
+        margin-top: 20px;
+    }
+
+    .banner {
+        padding: 40px 0;
+    }
+
+    .banner-text h2 {
+        font-size: 2em;
+    }
+
+    .banner-text p {
+        font-size: 1.1em;
+    }
+
+    .preset-btn {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+
+    .copy-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .tutorial-steps {
+        padding-left: 15px;
+    }
+
+    .control-group {
+        margin-bottom: 20px;
+    }
+
+    .control-group label {
+        margin-bottom: 8px;
+    }
+
+    /* Melhorar usabilidade dos controles em touch */
+    input[type="range"] {
+        height: 25px;
+        margin: 10px 0;
+    }
+
+    input[type="color"] {
+        min-height: 40px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .nav-content {
+        padding: 0 10px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.6em;
+    }
+
+    .presets-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .link-container {
+        flex-direction: column;
+    }
+
+    .copy-button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px;
+    }
+
+    #widgetUrl {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .tutorial-steps code {
+        display: inline-block;
+        margin: 5px 0;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-info p {
+        font-size: 0.9em;
+    }
+}
+
+/* Melhorar a visualização do preview em mobile */
+@media (max-width: 768px) {
+    .preview {
+        min-height: 150px;
+    }
+
+    .quote-example {
+        padding: 20px;
+        transform: none;
+    }
+
+    .quote-example:hover {
+        transform: none;
+    }
+}
+
+/* Otimizar controles para touch */
+@media (hover: none) {
+    .preset-btn:hover {
+        transform: none;
+    }
+
+    .nav-item:hover {
+        transform: none;
+    }
+
+    .control-group input[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -5,7 +5,7 @@ class QuotesService {
     this.API_ENDPOINTS = [
       "https://api.quotable.io/quotes/random?limit=10",
       "https://stoicquotesapi.com/v1/api/quotes/random",
-      "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
+      "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=pt",
     ];
   }
 
