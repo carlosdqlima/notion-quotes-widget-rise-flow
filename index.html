@@ -11,6 +11,25 @@
     <div class="container">
         <h1>Personalizar Widget de Citações</h1>
 
+        <!-- Adicionar seção de predefinições -->
+        <div class="presets-section">
+            <h2>Estilos Predefinidos</h2>
+            <div class="presets-grid">
+                <button class="preset-btn" data-preset="minimal">
+                    Minimalista
+                </button>
+                <button class="preset-btn" data-preset="modern">
+                    Moderno
+                </button>
+                <button class="preset-btn" data-preset="classic">
+                    Clássico
+                </button>
+                <button class="preset-btn" data-preset="dark">
+                    Dark
+                </button>
+            </div>
+        </div>
+
         <div class="customize-panel">
             <div class="controls">
                 <h2>Personalização</h2>
@@ -49,6 +68,21 @@
             <div class="preview-section">
                 <h2>Preview</h2>
                 <div id="preview" class="preview"></div>
+            </div>
+        </div>
+
+        <!-- Adicionar tutorial -->
+        <div class="tutorial-section">
+            <h2>Como adicionar ao Notion</h2>
+            <ol class="tutorial-steps">
+                <li>Personalize o widget usando os controles acima ou escolha um estilo predefinido</li>
+                <li>Clique em "Copiar Link" quando estiver satisfeito com o resultado</li>
+                <li>No Notion, digite <code>/embed</code> e pressione Enter</li>
+                <li>Cole o link copiado no campo de URL</li>
+                <li>Ajuste o tamanho do bloco conforme necessário</li>
+            </ol>
+            <div class="tutorial-tip">
+                <strong>Dica:</strong> Para melhor resultado, configure a altura do embed para aproximadamente 150-200 pixels.
             </div>
         </div>
 
