@@ -3,29 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Customizar Widget de Citações</title>
+    <title>Rise Quotes</title>
     <link rel="stylesheet" href="styles/customize.css">
 </head>
 
 <body>
-    <!-- Novo menu -->
     <nav class="main-nav">
         <div class="nav-content">
             <div class="nav-logo">
-                <img src="images/logo.png" alt="Rise Flow Logo" class="logo">
-                <span>Rise Flow</span>
+                <img src="images/logo.svg" alt="Rise Quotes Logo" class="logo">
+                <span>Rise Quotes</span>
             </div>
             <div class="nav-links">
-                <a href="https://github.com/seu-usuario/notion-quotes-widget-rise-flow" target="_blank">GitHub</a>
+                <a href="#presets">Predefinições</a>
+                <a href="#customize">Personalizar</a>
+                <a href="#tutorial">Tutorial</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Personalizar Widget de Citações</h1>
+        <h1>Personalize suas citações</h1>
 
-        <!-- Adicionar seção de predefinições -->
-        <div class="presets-section">
+        <div id="presets" class="presets-section">
             <h2>Estilos Predefinidos</h2>
             <div class="presets-grid">
                 <button class="preset-btn" data-preset="minimal">
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="customize-panel">
+        <div id="customize" class="customize-panel">
             <div class="controls">
                 <h2>Personalização</h2>
                 <div class="control-group">
@@ -84,8 +84,7 @@
             </div>
         </div>
 
-        <!-- Adicionar tutorial -->
-        <div class="tutorial-section">
+        <div id="tutorial" class="tutorial-section">
             <h2>Como adicionar ao Notion</h2>
             <ol class="tutorial-steps">
                 <li>Personalize o widget usando os controles acima ou escolha um estilo predefinido</li>
@@ -108,7 +107,7 @@
             <p class="instructions">Cole este link em um bloco "embed" do Notion</p>
         </div>
     </div>
-    <script src="quotes.js"></script>
+    <script src="quotes-service.js"></script>
     <script src="customize.js"></script>
 </body>
 

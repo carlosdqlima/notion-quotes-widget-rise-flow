@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0A192F;
+    color: #fff;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -6,15 +13,15 @@
     padding-top: 20px;
 }
 
-/* Novos estilos para o menu */
 .main-nav {
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #0A192F;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 100;
     padding: 12px 0;
     margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .nav-content {
@@ -32,6 +39,7 @@
     gap: 10px;
     font-size: 1.2em;
     font-weight: 500;
+    color: #fff;
 }
 
 .logo {
@@ -39,8 +47,13 @@
     width: auto;
 }
 
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
 .nav-links a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 4px;
@@ -48,7 +61,7 @@
 }
 
 .nav-links a:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .customize-panel {
@@ -59,7 +72,7 @@
 }
 
 .controls {
-    background: #f5f5f5;
+    background: rgba(255,255,255,0.05);
     padding: 20px;
     border-radius: 8px;
 }
@@ -72,6 +85,7 @@
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
+    color: #fff;
 }
 
 .control-group input[type="range"] {
@@ -79,7 +93,7 @@
 }
 
 .preview-section {
-    background: #fff;
+    background: rgba(255,255,255,0.05);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -126,7 +140,7 @@
 .presets-section {
     margin: 20px 0;
     padding: 20px;
-    background: #f8f8f8;
+    background: rgba(255,255,255,0.05);
     border-radius: 8px;
 }
 
@@ -154,9 +168,9 @@
 .tutorial-section {
     margin: 40px 0;
     padding: 25px;
-    background: #f0f7ff;
+    background: rgba(255,255,255,0.05);
     border-radius: 8px;
-    border-left: 4px solid #0066cc;
+    border-left: 4px solid #64FFDA;
 }
 
 .tutorial-steps {
@@ -179,7 +193,11 @@
 .tutorial-tip {
     margin-top: 20px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255,255,255,0.1);
     border-radius: 6px;
-    border: 1px solid #0066cc30;
+    border: 1px solid rgba(100,255,218,0.3);
+}
+
+html {
+    scroll-behavior: smooth;
 }
