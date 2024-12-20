@@ -4,77 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Customizar Widget de Citações</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .preview {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ddd;
-        }
-
-        .controls {
-            display: grid;
-            gap: 15px;
-        }
-
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        #widgetUrl {
-            padding: 10px;
-            width: 100%;
-            margin: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/customize.css">
 </head>
 
 <body>
-    <h1>Personalizar Widget de Citações</h1>
+    <div class="container">
+        <h1>Personalizar Widget de Citações</h1>
 
-    <div class="controls">
-        <div class="control-group">
-            <label>Tema:</label>
-            <select id="theme">
-                <option value="auto">Automático (seguir Notion)</option>
-                <option value="light">Claro</option>
-                <option value="dark">Escuro</option>
-            </select>
+        <div class="customize-panel">
+            <div class="controls">
+                <h2>Personalização</h2>
+                <div class="control-group">
+                    <label>Cor do texto:</label>
+                    <input type="color" id="textColor" value="#333333">
+                </div>
+
+                <div class="control-group">
+                    <label>Cor do fundo:</label>
+                    <input type="color" id="bgColor" value="#ffffff">
+                    <input type="range" id="bgOpacity" min="0" max="100" value="100">
+                    <span id="bgOpacityValue">100%</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Borda:</label>
+                    <input type="color" id="borderColor" value="#dddddd">
+                    <input type="range" id="borderWidth" min="0" max="5" value="1">
+                    <span id="borderWidthValue">1px</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Raio da borda:</label>
+                    <input type="range" id="borderRadius" min="0" max="20" value="8">
+                    <span id="borderRadiusValue">8px</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Tamanho da fonte:</label>
+                    <input type="range" id="fontSize" min="12" max="24" value="16">
+                    <span id="fontSizeValue">16px</span>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h2>Preview</h2>
+                <div id="preview" class="preview"></div>
+            </div>
         </div>
 
-        <div class="control-group">
-            <label>Fonte:</label>
-            <select id="font">
-                <option value="default">Padrão</option>
-                <option value="serif">Serifada</option>
-                <option value="mono">Monoespaçada</option>
-            </select>
-        </div>
-
-        <div class="control-group">
-            <label>Tamanho da fonte:</label>
-            <input type="range" id="fontSize" min="80" max="120" value="100">
+        <div class="link-section">
+            <h2>Link para o Widget</h2>
+            <div class="link-container">
+                <input type="text" id="widgetUrl" readonly>
+                <button onclick="copyUrl()" class="copy-button">Copiar Link</button>
+            </div>
+            <p class="instructions">Cole este link em um bloco "embed" do Notion</p>
         </div>
     </div>
-
-    <div class="preview" id="preview">
-        <!-- Preview do widget aqui -->
-    </div>
-
-    <div>
-        <h3>Link para o Widget:</h3>
-        <input type="text" id="widgetUrl" readonly>
-        <button onclick="copyUrl()">Copiar Link</button>
-    </div>
-
+    <script src="quotes.js"></script>
     <script src="customize.js"></script>
 </body>
 

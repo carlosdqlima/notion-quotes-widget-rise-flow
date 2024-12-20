@@ -37,21 +37,35 @@
     </style>
 </head>
 <body>
-    <div id="quote-container" class="quote-container">
-        <div id="quote-text" class="quote-text"></div>
-        <div id="quote-author" class="quote-author"></div>
-    </div>
+    <div id="quote-container" class="quote-container"></div>
     <script src="quotes.js"></script>
     <script src="script.js"></script>
     <script>
-        // Aplicar configurações da URL
-        const params = new URLSearchParams(window.location.search);
-        const theme = params.get('theme') || 'auto';
-        const font = params.get('font') || 'default';
-        const size = params.get('size') || '100';
+        // Obter parâmetros da URL
+        const params = Object.fromEntries(new URLSearchParams(window.location.search));
+        
+        // Gerar HTML com os parâmetros
+        function displayQuote() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            const style = `
+                color: ${params.textColor || '#333'};
+                background-color: ${params.bgColor || '#fff'}${params.bgOpacity ? Math.round(params.bgOpacity * 2.55).toString(16).padStart(2, '0') : ''};
+                border: ${params.borderWidth || 1}px solid ${params.borderColor || '#ddd'};
+                border-radius: ${params.borderRadius || 8}px;
+                font-size: ${params.fontSize || 16}px;
+                padding: 20px;
+                text-align: center;
+            `;
 
-        document.body.classList.add(`theme-${theme}`, `font-${font}`);
-        document.documentElement.style.setProperty('--font-size', `${size}%`);
+            document.getElementById('quote-container').innerHTML = `
+                <div style="${style}">
+                    <div style="font-style: italic; margin-bottom: 10px;">${randomQuote.text}</div>
+                    <div style="opacity: 0.8;">— ${randomQuote.author}</div>
+                </div>
+            `;
+        }
+
+        displayQuote();
     </script>
 </body>
 </html>
