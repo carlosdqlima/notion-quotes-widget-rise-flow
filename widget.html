@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --font-size: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .theme-light {
+            --bg-color: transparent;
+            --text-color: rgb(55, 53, 47);
+            --border-color: rgba(55, 53, 47, 0.16);
+        }
+        .theme-dark {
+            --bg-color: rgba(25, 25, 25, 0.3);
+            --text-color: rgb(255, 255, 255);
+            --border-color: rgba(255, 255, 255, 0.13);
+        }
+        .font-default { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        .font-serif { font-family: Georgia, serif; }
+        .font-mono { font-family: monospace; }
+
+        .quote-container {
+            font-size: var(--font-size);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="quote-container" class="quote-container">
+        <div id="quote-text" class="quote-text"></div>
+        <div id="quote-author" class="quote-author"></div>
+    </div>
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Aplicar configurações da URL
+        const params = new URLSearchParams(window.location.search);
+        const theme = params.get('theme') || 'auto';
+        const font = params.get('font') || 'default';
+        const size = params.get('size') || '100';
+
+        document.body.classList.add(`theme-${theme}`, `font-${font}`);
+        document.documentElement.style.setProperty('--font-size', `${size}%`);
+    </script>
+</body>
+</html>

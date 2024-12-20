@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notion Quotes Widget</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Customizar Widget de Citações</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .preview {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .controls {
+            display: grid;
+            gap: 15px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        #widgetUrl {
+            padding: 10px;
+            width: 100%;
+            margin: 20px 0;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="quote-container">
-        <p class="quote-text" id="quote-text"></p>
-        <p class="quote-author" id="quote-author"></p>
+    <h1>Personalizar Widget de Citações</h1>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>Tema:</label>
+            <select id="theme">
+                <option value="auto">Automático (seguir Notion)</option>
+                <option value="light">Claro</option>
+                <option value="dark">Escuro</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Fonte:</label>
+            <select id="font">
+                <option value="default">Padrão</option>
+                <option value="serif">Serifada</option>
+                <option value="mono">Monoespaçada</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Tamanho da fonte:</label>
+            <input type="range" id="fontSize" min="80" max="120" value="100">
+        </div>
     </div>
-    <script src="quotes.js"></script>
-    <script src="script.js"></script>
+
+    <div class="preview" id="preview">
+        <!-- Preview do widget aqui -->
+    </div>
+
+    <div>
+        <h3>Link para o Widget:</h3>
+        <input type="text" id="widgetUrl" readonly>
+        <button onclick="copyUrl()">Copiar Link</button>
+    </div>
+
+    <script src="customize.js"></script>
 </body>
+
 </html>
