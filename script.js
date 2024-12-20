@@ -9,4 +9,10 @@ function displayQuote() {
     document.getElementById('quote-author').textContent = `— ${quote.author}`;
 }
 
-displayQuote(); 
+// Detectar mudanças no tema do sistema
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    // A mudança de tema será automática devido às variáveis CSS
+    console.log('Tema do sistema alterado');
+});
+
+displayQuote();

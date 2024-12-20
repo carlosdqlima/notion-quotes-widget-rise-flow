@@ -1,11 +1,27 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #dddddd;
+    --author-color: #666666;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #222;
+        --text-color: #f0f0f0;
+        --border-color: #444;
+        --author-color: #aaa;
+    }
+}
+
 .quote-container {
     font-family: sans-serif;
     padding: 20px;
-    border: 1px solid #444;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     text-align: center;
-    color: #f0f0f0; 
-    background-color: #222; 
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 .quote-text {
@@ -16,5 +32,5 @@
 
 .quote-author {
    font-size: 0.9em;
-    color: #aaa;
+    color: var(--author-color);
 }
