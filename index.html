@@ -3,16 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Customizar Widget de Citações</title>
+    <title>Widget de Citações para Notion</title>
     <link rel="stylesheet" href="styles/customize.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Personalizar Widget de Citações</h1>
+    <nav class="main-nav">
+        <div class="nav-content">
+            <div class="logo">QuotesFlow</div>
+            <ul class="nav-links">
+                <li><a href="#customize">Personalizar</a></li>
+                <li><a href="#tutorial">Tutorial</a></li>
+                <li><a href="#about">Sobre</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Adicionar seção de predefinições -->
-        <div class="presets-section">
+    <header class="banner">
+        <div class="banner-content">
+            <h1>Widget de Citações para Notion</h1>
+            <p>Personalize e adicione citações inspiradoras ao seu Notion</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="customize" class="presets-section">
             <h2>Estilos Predefinidos</h2>
             <div class="presets-grid">
                 <button class="preset-btn" data-preset="minimal">
@@ -28,9 +43,9 @@
                     Dark
                 </button>
             </div>
-        </div>
+        </section>
 
-        <div class="customize-panel">
+        <section class="customize-panel">
             <div class="controls">
                 <h2>Personalização</h2>
                 <div class="control-group">
@@ -69,10 +84,9 @@
                 <h2>Preview</h2>
                 <div id="preview" class="preview"></div>
             </div>
-        </div>
+        </section>
 
-        <!-- Adicionar tutorial -->
-        <div class="tutorial-section">
+        <section id="tutorial" class="tutorial-section">
             <h2>Como adicionar ao Notion</h2>
             <ol class="tutorial-steps">
                 <li>Personalize o widget usando os controles acima ou escolha um estilo predefinido</li>
@@ -84,17 +98,45 @@
             <div class="tutorial-tip">
                 <strong>Dica:</strong> Para melhor resultado, configure a altura do embed para aproximadamente 150-200 pixels.
             </div>
-        </div>
+        </section>
 
-        <div class="link-section">
+        <section class="link-section">
             <h2>Link para o Widget</h2>
             <div class="link-container">
                 <input type="text" id="widgetUrl" readonly>
                 <button onclick="copyUrl()" class="copy-button">Copiar Link</button>
             </div>
             <p class="instructions">Cole este link em um bloco "embed" do Notion</p>
-        </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>Sobre o Widget</h2>
+            <div class="about-content">
+                <p>O Widget de Citações para Notion é uma ferramenta gratuita que permite adicionar citações inspiradoras ao seu workspace.</p>
+                <ul class="features">
+                    <li>✨ Citações atualizadas diariamente</li>
+                    <li>🎨 Personalização completa</li>
+                    <li>🌗 Compatível com tema claro/escuro</li>
+                    <li>📱 Responsivo em todos dispositivos</li>
+                </ul>
+            </div>
+        </section>
     </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>QuotesFlow</h3>
+                <p>Desenvolvido com ❤️ para a comunidade Notion</p>
+            </div>
+            <div class="footer-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Reportar Problema</a>
+                <a href="#" target="_blank">Sugerir Funcionalidade</a>
+            </div>
+        </div>
+    </footer>
+
     <script src="quotes.js"></script>
     <script src="customize.js"></script>
 </body>
