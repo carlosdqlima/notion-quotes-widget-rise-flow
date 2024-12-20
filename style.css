@@ -4,30 +4,32 @@
     --border-color: rgba(55, 53, 47, 0.16);
     --author-color: rgba(55, 53, 47, 0.6);
 }
-
-body.notion-dark-theme .quote-container {
-    --text-color: rgb(250, 250, 250) !important;
-   --border-color: rgba(255, 255, 255, 0.2) !important;
-     --author-color: rgba(250, 250, 250, 0.7) !important;
-     --bg-color: rgba(30, 30, 30, 0.85) !important;
-}
-.quote-container {
-   font-family: sans-serif;
+ .quote-container {
+    font-family: sans-serif;
     padding: 20px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     text-align: center;
     color: var(--text-color);
-    background-color: var(--bg-color);
+     background-color: var(--bg-color);
 }
-
 .quote-text {
    font-style: italic;
     font-size: 1.2em;
     margin-bottom: 10px;
 }
 
-.quote-author {
+ .quote-author {
    font-size: 0.9em;
     color: var(--author-color);
+}
+
+body.notion-dark-theme .quote-container {
+  background-color: rgba(30, 30, 30, 0.85) !important;
+  color: rgb(250, 250, 250) !important;
+ border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+ body.notion-dark-theme  .quote-author {
+     color: rgba(250, 250, 250, 0.7) !important;
 }
