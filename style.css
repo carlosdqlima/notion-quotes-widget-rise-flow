@@ -16,3 +16,31 @@
     font-size: 0.9em;
     color: #777;
 }
+
+
+@media (prefers-color-scheme: light) {
+    .quote-container {
+        background-color: #fff; 
+        color: #333; 
+    }
+    .quote-author {
+        color: #777;
+    }
+    .quote-container {
+     border: 1px solid #eee;
+     }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .quote-container {
+        background-color: #222; 
+        color: #f0f0f0; 
+    }
+   .quote-author {
+        color: #aaa;
+    }
+     .quote-container {
+     border: 1px solid #444; 
+ }
+}

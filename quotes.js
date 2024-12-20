@@ -11,5 +11,5 @@ const quotes = [
         text: "O sucesso não é final, o fracasso não é fatal: é a coragem de continuar que conta.",
         author: "Winston Churchill"
     }
-    // Adicione mais citações aqui
+    
 ];

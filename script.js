@@ -9,4 +9,4 @@ function displayQuote() {
     document.getElementById('quote-author').textContent = `— ${quote.author}`;
 }
 
-displayQuote(); // Exibe a primeira citação ao carregar a página
+displayQuote(); 
